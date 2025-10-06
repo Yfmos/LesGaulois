@@ -21,9 +21,15 @@ public class Gaulois {
 	public String getNom() {
 		return nom;
 	}
+	
+	public void setVillage(Village village) {
+		
+	}
+	
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
+	
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
@@ -47,6 +53,10 @@ public class Gaulois {
 	public void boirePotion(int forcePotion) {
 		this.effetPotion = forcePotion;
 	
+	}
+	
+	public void sePresenter() {
+		
 	}
 
 	public static void main(String[] args){
