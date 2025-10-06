@@ -21,7 +21,6 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
-		this.force = force - forceCoup;
 		if (forceCoup > this.force ) {
 			this.parler("J'abandonne !");
 		}
@@ -29,6 +28,7 @@ public class Romain {
 			this.parler("Aïe");
 			
 		}
+		this.force = force - forceCoup;
 	}
 
 }
