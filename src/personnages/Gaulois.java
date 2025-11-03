@@ -1,9 +1,12 @@
 package personnages;
 
+import java.util.Objects;
+
 public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
+	private Village monvillage = null;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -23,7 +26,7 @@ public class Gaulois {
 	}
 	
 	public void setVillage(Village village) {
-		
+		monvillage = village;
 	}
 	
 	public void parler(String texte) {
@@ -56,7 +59,17 @@ public class Gaulois {
 	}
 	
 	public void sePresenter() {
-		
+		if (monvillage != null) {
+			if (Objects.equals(monvillage.getChef(), getNom())) {
+				parler("Bonjour, je m'appelle " + getNom() + ". Je suis le chef du village " + monvillage.getNom() +".");
+			}
+			else {
+				parler("Bonjour, je m'appelle " + getNom() + ". J'habite le village " + monvillage.getNom() + ".");	
+			}	
+		}
+		else {
+			parler("Bonjour, je m'appelle " + getNom() + ". Je voyage de villages en villages.");
+		}
 	}
 
 	public static void main(String[] args){
